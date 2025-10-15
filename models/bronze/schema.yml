@@ -1,0 +1,504 @@
+version: 2
+
+sources:
+  - name: raw_zoom
+    description: "Raw data from Zoom platform containing unprocessed user, meeting, and system data"
+    tables:
+      - name: users
+        description: "Raw user data from Zoom platform"
+        columns:
+          - name: user_id
+            description: "Unique identifier for users"
+            tests:
+              - not_null
+              - unique
+          - name: user_name
+            description: "Display name of the user"
+          - name: email
+            description: "Email address of the user"
+          - name: company
+            description: "Company name associated with the user"
+          - name: plan_type
+            description: "Zoom plan type for the user"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: meetings
+        description: "Raw meeting data from Zoom platform"
+        columns:
+          - name: meeting_id
+            description: "Unique identifier for meetings"
+            tests:
+              - not_null
+              - unique
+          - name: host_id
+            description: "User ID of the meeting host"
+          - name: meeting_topic
+            description: "Topic or title of the meeting"
+          - name: start_time
+            description: "Meeting start timestamp"
+          - name: end_time
+            description: "Meeting end timestamp"
+          - name: duration_minutes
+            description: "Meeting duration in minutes"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: participants
+        description: "Raw participant data from Zoom meetings"
+        columns:
+          - name: participant_id
+            description: "Unique identifier for participants"
+            tests:
+              - not_null
+              - unique
+          - name: meeting_id
+            description: "Meeting identifier that participant joined"
+          - name: user_id
+            description: "User identifier of the participant"
+          - name: join_time
+            description: "Timestamp when participant joined"
+          - name: leave_time
+            description: "Timestamp when participant left"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: feature_usage
+        description: "Raw feature usage data from Zoom platform"
+        columns:
+          - name: usage_id
+            description: "Unique identifier for feature usage records"
+            tests:
+              - not_null
+              - unique
+          - name: meeting_id
+            description: "Meeting where feature was used"
+          - name: feature_name
+            description: "Name of the feature used"
+          - name: usage_count
+            description: "Number of times feature was used"
+          - name: usage_date
+            description: "Date when feature was used"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: webinars
+        description: "Raw webinar data from Zoom platform"
+        columns:
+          - name: webinar_id
+            description: "Unique identifier for webinars"
+            tests:
+              - not_null
+              - unique
+          - name: host_id
+            description: "User ID of the webinar host"
+          - name: webinar_topic
+            description: "Topic or title of the webinar"
+          - name: start_time
+            description: "Webinar start timestamp"
+          - name: end_time
+            description: "Webinar end timestamp"
+          - name: registrants
+            description: "Number of webinar registrants"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: support_tickets
+        description: "Raw support ticket data from Zoom platform"
+        columns:
+          - name: ticket_id
+            description: "Unique identifier for support tickets"
+            tests:
+              - not_null
+              - unique
+          - name: user_id
+            description: "User who created the support ticket"
+          - name: ticket_type
+            description: "Type or category of the support ticket"
+          - name: resolution_status
+            description: "Current status of the ticket resolution"
+          - name: open_date
+            description: "Date when ticket was opened"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: licenses
+        description: "Raw license data from Zoom platform"
+        columns:
+          - name: license_id
+            description: "Unique identifier for licenses"
+            tests:
+              - not_null
+              - unique
+          - name: license_type
+            description: "Type of Zoom license"
+          - name: assigned_to_user_id
+            description: "User ID to whom license is assigned"
+          - name: start_date
+            description: "License validity start date"
+          - name: end_date
+            description: "License validity end date"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+            
+      - name: billing_events
+        description: "Raw billing event data from Zoom platform"
+        columns:
+          - name: event_id
+            description: "Unique identifier for billing events"
+            tests:
+              - not_null
+              - unique
+          - name: user_id
+            description: "User associated with the billing event"
+          - name: event_type
+            description: "Type of billing event"
+          - name: amount
+            description: "Monetary amount of the billing event"
+          - name: event_date
+            description: "Date when billing event occurred"
+          - name: load_timestamp
+            description: "Timestamp when record was loaded into raw layer"
+          - name: update_timestamp
+            description: "Timestamp when record was last updated"
+          - name: source_system
+            description: "Source system identifier"
+
+models:
+  - name: bz_audit_log
+    description: "Audit log table tracking processing status of bronze layer models"
+    columns:
+      - name: record_id
+        description: "Auto-incrementing unique identifier for audit records"
+        tests:
+          - not_null
+      - name: source_table
+        description: "Name of the source table being processed"
+        tests:
+          - not_null
+      - name: load_timestamp
+        description: "Timestamp when processing started"
+        tests:
+          - not_null
+      - name: processed_by
+        description: "Process or user that performed the transformation"
+        tests:
+          - not_null
+      - name: processing_time
+        description: "Time taken to process the table in seconds"
+      - name: status
+        description: "Processing status (STARTED, COMPLETED, FAILED)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['STARTED', 'COMPLETED', 'FAILED', 'INITIALIZED']
+              
+  - name: bz_users
+    description: "Bronze layer users table with cleansed and standardized user data"
+    columns:
+      - name: user_id
+        description: "Unique identifier for users (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: user_name
+        description: "Display name of the user (cleansed)"
+        tests:
+          - not_null
+      - name: email
+        description: "Email address of the user (standardized to lowercase)"
+        tests:
+          - not_null
+      - name: company
+        description: "Company name associated with the user (cleansed)"
+        tests:
+          - not_null
+      - name: plan_type
+        description: "Zoom plan type for the user (standardized to uppercase)"
+        tests:
+          - not_null
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_meetings
+    description: "Bronze layer meetings table with cleansed and standardized meeting data"
+    columns:
+      - name: meeting_id
+        description: "Unique identifier for meetings (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: host_id
+        description: "User ID of the meeting host (cleansed)"
+        tests:
+          - not_null
+      - name: meeting_topic
+        description: "Topic or title of the meeting (cleansed)"
+        tests:
+          - not_null
+      - name: start_time
+        description: "Meeting start timestamp"
+      - name: end_time
+        description: "Meeting end timestamp"
+      - name: duration_minutes
+        description: "Meeting duration in minutes (validated >= 0)"
+        tests:
+          - not_null
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_participants
+    description: "Bronze layer participants table with cleansed participant data"
+    columns:
+      - name: participant_id
+        description: "Unique identifier for participants (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: meeting_id
+        description: "Meeting identifier that participant joined (cleansed)"
+        tests:
+          - not_null
+      - name: user_id
+        description: "User identifier of the participant (cleansed)"
+        tests:
+          - not_null
+      - name: join_time
+        description: "Timestamp when participant joined"
+      - name: leave_time
+        description: "Timestamp when participant left"
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_feature_usage
+    description: "Bronze layer feature usage table with cleansed usage data"
+    columns:
+      - name: usage_id
+        description: "Unique identifier for feature usage records (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: meeting_id
+        description: "Meeting where feature was used (cleansed)"
+        tests:
+          - not_null
+      - name: feature_name
+        description: "Name of the feature used (standardized to uppercase)"
+        tests:
+          - not_null
+      - name: usage_count
+        description: "Number of times feature was used (validated >= 0)"
+        tests:
+          - not_null
+      - name: usage_date
+        description: "Date when feature was used"
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_webinars
+    description: "Bronze layer webinars table with cleansed webinar data"
+    columns:
+      - name: webinar_id
+        description: "Unique identifier for webinars (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: host_id
+        description: "User ID of the webinar host (cleansed)"
+        tests:
+          - not_null
+      - name: webinar_topic
+        description: "Topic or title of the webinar (cleansed)"
+        tests:
+          - not_null
+      - name: start_time
+        description: "Webinar start timestamp"
+      - name: end_time
+        description: "Webinar end timestamp"
+      - name: registrants
+        description: "Number of webinar registrants (validated >= 0)"
+        tests:
+          - not_null
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_support_tickets
+    description: "Bronze layer support tickets table with cleansed ticket data"
+    columns:
+      - name: ticket_id
+        description: "Unique identifier for support tickets (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: "User who created the support ticket (cleansed)"
+        tests:
+          - not_null
+      - name: ticket_type
+        description: "Type or category of the support ticket (standardized to uppercase)"
+        tests:
+          - not_null
+      - name: resolution_status
+        description: "Current status of the ticket resolution (standardized to uppercase)"
+        tests:
+          - not_null
+      - name: open_date
+        description: "Date when ticket was opened"
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_licenses
+    description: "Bronze layer licenses table with cleansed license data"
+    columns:
+      - name: license_id
+        description: "Unique identifier for licenses (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: license_type
+        description: "Type of Zoom license (standardized to uppercase)"
+        tests:
+          - not_null
+      - name: assigned_to_user_id
+        description: "User ID to whom license is assigned (cleansed)"
+        tests:
+          - not_null
+      - name: start_date
+        description: "License validity start date"
+      - name: end_date
+        description: "License validity end date"
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
+          
+  - name: bz_billing_events
+    description: "Bronze layer billing events table with cleansed billing data"
+    columns:
+      - name: event_id
+        description: "Unique identifier for billing events (cleansed and standardized)"
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: "User associated with the billing event (cleansed)"
+        tests:
+          - not_null
+      - name: event_type
+        description: "Type of billing event (standardized to uppercase)"
+        tests:
+          - not_null
+      - name: amount
+        description: "Monetary amount of the billing event (validated)"
+        tests:
+          - not_null
+      - name: event_date
+        description: "Date when billing event occurred"
+      - name: load_timestamp
+        description: "Timestamp when record was loaded into raw layer"
+        tests:
+          - not_null
+      - name: update_timestamp
+        description: "Timestamp when record was processed into bronze layer"
+        tests:
+          - not_null
+      - name: source_system
+        description: "Source system identifier"
+        tests:
+          - not_null
