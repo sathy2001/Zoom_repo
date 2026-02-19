@@ -90,3 +90,26 @@ Once the workbook is moved to target please ensure to change the data source con
 
 ---
 
+
+## Approval Record
+
+**Timestamp:** 2026-02-19 20:36:55.270256
+
+**Reviewer:** sathya palukuri
+
+**Deployment Time:** 
+
+**Decision:** approved
+
+**Source Project:** DEV PROJECT
+
+**Target Project:** PROD PROJECT
+
+**Workbook:** Asc_Demo_Superstore_Dev
+
+**Comments:**
+The visual changes look good to me.
+Once the workbook is moved to target please ensure to change the data source connections
+
+---
+

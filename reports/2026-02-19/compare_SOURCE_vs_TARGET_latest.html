@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tableau Diff — Approval Report</title>
+
+<style>
+body {
+  background:#f7f9fc;
+  font-family:Segoe UI, Arial, sans-serif;
+  margin:28px;
+  color:#233142;
+}
+.panel {
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  padding:18px;
+  margin:16px 0;
+}
+button {
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================================================== -->
+<!-- HEADER -->
+<!-- ===================================================== -->
+<div class="panel" style="background:#2D8CFF;color:white;">
+  <h1 style="margin:0;">Tableau Online — Visual Delta</h1>
+  <p>Generated: 2026-02-19 20:34:26</p>
+  <p><b>Source:</b> Asc_Demo_Superstore → sathyapalukuri94@gmail.com</p>
+  <p><b>Target:</b> Asc_Demo_Superstore_Dev → sathyapalukuri94@gmail.com</p>
+</div>
+
+<!-- ===================================================== -->
+<!-- USERS & PERMISSIONS -->
+<!-- ===================================================== -->
+
+    <div class="panel" style="margin-bottom:16px;">
+        <h2 style="margin-bottom:8px;">👥 Users & Permissions</h2>
+
+        <div style="
+            display:flex;
+            gap:18px;
+            align-items:center;
+            font-size:13px;
+            padding:6px 10px;
+            background:#F5F9FF;
+            border-left:3px solid #1F6FE5;
+            border-radius:6px;
+            margin-bottom:10px;
+            flex-wrap:wrap;
+        ">
+            <div>
+                <strong>Source Project:</strong>
+                <span style="opacity:0.85;">PROD PROJECT</span>
+            </div>
+
+            <div>
+                <strong>Source Workbook:</strong>
+                <span style="opacity:0.85;">Asc_Demo_Superstore</span>
+            </div>
+        </div>
+
+        
+    <details class="panel" style="
+        background:#EAF3FF;
+        border-radius:14px;
+        padding:10px 14px;
+        margin:16px 0;
+        box-shadow:0 3px 8px rgba(0,0,0,0.08);
+    ">
+      <summary style="
+          cursor:pointer;
+          font-size:16px;
+          font-weight:600;
+          color:#1f6fe5;
+          padding:6px 0;
+          list-style:none;
+      ">
+        👥 Users & Permissions
+      </summary>
+
+      <div style="margin-top:12px;">
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            font-size:14px;
+        ">
+          <tr style="border-bottom:1px solid #c6dbff;">
+            <th align="left">User / Group</th>
+            <th align="left">Type</th>
+            <th align="left">Permission Level</th>
+            <th align="left">Capabilities (if Custom)</th>
+          </tr>
+          
+        <tr>
+          <td>All Users</td>
+          <td>Group</td>
+          <td><b>Custom (Workbook)</b></td>
+          <td>AddComment, ExportData, ExportImage, Filter, Read, ShareView, ViewComments, ViewUnderlyingData, Write</td>
+        </tr>
+        
+        </table>
+      </div>
+    </details>
+    
+    </div>
+    <hr/>
+    <div class="panel" style="margin-bottom:16px;">
+        <h2 style="margin-bottom:8px;">👥 Users & Permissions</h2>
+
+        <div style="
+            display:flex;
+            gap:18px;
+            align-items:center;
+            font-size:13px;
+            padding:6px 10px;
+            background:#F5F9FF;
+            border-left:3px solid #1F6FE5;
+            border-radius:6px;
+            margin-bottom:10px;
+            flex-wrap:wrap;
+        ">
+            <div>
+                <strong>Target Project:</strong>
+                <span style="opacity:0.85;">DEV PROJECT</span>
+            </div>
+
+            <div>
+                <strong>Target Workbook:</strong>
+                <span style="opacity:0.85;">Asc_Demo_Superstore_Dev</span>
+            </div>
+        </div>
+
+        
+    <details class="panel" style="
+        background:#EAF3FF;
+        border-radius:14px;
+        padding:10px 14px;
+        margin:16px 0;
+        box-shadow:0 3px 8px rgba(0,0,0,0.08);
+    ">
+      <summary style="
+          cursor:pointer;
+          font-size:16px;
+          font-weight:600;
+          color:#1f6fe5;
+          padding:6px 0;
+          list-style:none;
+      ">
+        👥 Users & Permissions
+      </summary>
+
+      <div style="margin-top:12px;">
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            font-size:14px;
+        ">
+          <tr style="border-bottom:1px solid #c6dbff;">
+            <th align="left">User / Group</th>
+            <th align="left">Type</th>
+            <th align="left">Permission Level</th>
+            <th align="left">Capabilities (if Custom)</th>
+          </tr>
+          
+        <tr>
+          <td>All Users</td>
+          <td>Group</td>
+          <td><b>Custom (Workbook)</b></td>
+          <td>AddComment, ExportData, ExportImage, Filter, Read, ShareView, ViewComments, ViewUnderlyingData, Write</td>
+        </tr>
+        
+        </table>
+      </div>
+    </details>
+    
+    </div>
+    
+
+
+<!-- ===================================================== -->
+<!-- KPI -->
+<!-- ===================================================== -->
+
+    <details class="panel" style="
+        background:#EAF3FF;
+        border-radius:14px;
+        padding:10px 14px;
+        margin:16px 0;
+        box-shadow:0 3px 8px rgba(0,0,0,0.08);
+    ">
+      <summary style="
+          cursor:pointer;
+          font-size:16px;
+          font-weight:600;
+          color:#1f6fe5;
+          padding:6px 0;
+          list-style:none;
+      ">
+        📊 Workbook Metrics — Source Workbook Vs Target Workbook
+      </summary>
+
+      <div style="margin-top:12px;">
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            font-size:14px;
+        ">
+          <tr style="border-bottom:1px solid #c6dbff;">
+            <th align="left">Metric</th>
+            <th align="right">Source</th>
+            <th align="right">Target</th>
+          </tr>
+
+          <tr>
+            <td>Stories</td>
+            <td align="right">0</td>
+            <td align="right">0</td>
+          </tr>
+
+          <tr>
+            <td>Dashboards</td>
+            <td align="right">1</td>
+            <td align="right">1</td>
+          </tr>
+
+          <tr>
+            <td>Worksheets</td>
+            <td align="right">3</td>
+            <td align="right">3</td>
+          </tr>
+
+          <tr>
+            <td>Filters (Worksheet, Dashboard)</td>
+            <td align="right">
+              12
+              <span style="opacity:0.75;">
+                (11, 1)
+              </span>
+            </td>
+            <td align="right">
+              13
+              <span style="opacity:0.75;">
+                (11, 2)
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Parameters</td>
+            <td align="right">7</td>
+            <td align="right">7</td>
+          </tr>
+
+          <tr>
+            <td>Calculated Fields</td>
+            <td align="right">21</td>
+            <td align="right">20</td>
+          </tr>
+        </table>
+      </div>
+    </details>
+    
+
+<!-- ===================================================== -->
+<!-- WORKBOOK SUMMARY -->
+<!-- ===================================================== -->
+
+<details class="card card-modified" open
+  style="
+    background:#F5F9FF;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:6px solid
+      #FFCA28;
+  "
+>
+  <summary style="
+    padding:12px 14px;
+    font-weight:600;
+    color:#1F6FE5;
+    cursor:pointer;
+  ">
+    📘 <strong>Overall Workbook Differences Summary</strong>
+    — 
+    <span class='badge badge-modified'>🟨 Modified</span>
+  </summary>
+
+  <div class="card-body" style="padding:10px 16px;">
+    <ul class="bullets" style="margin:0;">
+      <li>📦 Total objects changed: 5</li><li>➕ Added: 0</li><li>➖ Removed: 1</li><li>🟨 Modified: 4</li><li>--- Executive Summary ---</li><li>Removed the calculation &quot;Cost_Cal&quot; which used the formula [Sales] - [Profit].</li><li>Modified the &quot;Product&quot; dashboard by adding a dashboard-level filter on Sub-Category.</li><li>Modified the &quot;CustomerOverview&quot; worksheet by removing a calculation field, updating calculation fields, changing tooltip content with adjusted sales, quantity, and profit values, and updating mark color to a semi-transparent orange (#f28e2bcc).</li><li>Modified the &quot;ProductDetails&quot; worksheet by removing the Action date filter, adding a cascading filter on multiple Sub-Category members, updating a calculation formula to multiply Segment by Sales, and revising tooltip content to show Sales, Profit, and a custom calculation with new formatting.</li><li>Modified the &quot;ProductView&quot; worksheet by updating the tooltip to include formatted order date information with customized font style and color.</li>
+    </ul>
+  </div>
+</details>
+
+
+<!-- ===================================================== -->
+<!-- VIEW LEVEL CHANGES -->
+<!-- ===================================================== -->
+<details class="panel">
+  <summary style="font-size:18px;font-weight:700;cursor:pointer;">
+    🧩 View-Level Changes
+  </summary>
+  <div style="margin-top:12px;">
+    
+<details class="card card-modified" open
+  style="
+    background:#F5F9FF;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:6px solid
+      #FFCA28;
+  "
+>
+  <summary style="
+    padding:12px 14px;
+    font-weight:600;
+    color:#1F6FE5;
+    cursor:pointer;
+  ">
+    🟨 <strong>Modified Dashboard</strong>
+    — Product
+    <span class='badge badge-modified'>🟨 Modified</span>
+  </summary>
+
+  <div class="card-body" style="padding:10px 16px;">
+    <ul class="bullets" style="margin:0;">
+      <li>🔎 Dashboard-level filters added: Sub-Category</li><li>--- GPT Summary ---</li><li>Added a filter on Sub-Category to the dashboard.</li>
+    </ul>
+  </div>
+</details>
+
+
+<details class="card card-modified" open
+  style="
+    background:#F5F9FF;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:6px solid
+      #FFCA28;
+  "
+>
+  <summary style="
+    padding:12px 14px;
+    font-weight:600;
+    color:#1F6FE5;
+    cursor:pointer;
+  ">
+    🟨 <strong>Modified Worksheet</strong>
+    — CustomerOverview
+    <span class='badge badge-modified'>🟨 Modified</span>
+  </summary>
+
+  <div class="card-body" style="padding:10px 16px;">
+    <ul class="bullets" style="margin:0;">
+      <li>📊 Fields in view removed: usr:Calculation_9321103144526191:qk</li><li>--- GPT Summary ---</li><li>Updated the calculation fields by removing one calculation and modifying another in the worksheet.</li><li>Modified tooltip content to include updated sales, quantity, and profit values with adjusted font styling.</li><li>Updated color formatting by changing the mark color to a semi-transparent orange shade (#f28e2bcc) with adjusted transparency.</li>
+    </ul>
+  </div>
+</details>
+
+
+<details class="card card-modified" open
+  style="
+    background:#F5F9FF;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:6px solid
+      #FFCA28;
+  "
+>
+  <summary style="
+    padding:12px 14px;
+    font-weight:600;
+    color:#1F6FE5;
+    cursor:pointer;
+  ">
+    🟨 <strong>Modified Worksheet</strong>
+    — ProductDetails
+    <span class='badge badge-modified'>🟨 Modified</span>
+  </summary>
+
+  <div class="card-body" style="padding:10px 16px;">
+    <ul class="bullets" style="margin:0;">
+      <li>➕ Filters added: none:Sub-Category:nk</li><li>➖ Filters removed: Action (YEAR(Order Date),MONTH(Order Date))</li><li>📅 Date filter setup changed.</li><li>--- GPT Summary ---</li><li>Updated the calculation formula for a column to multiply Segment by Sales.</li><li>Modified a filter to include a cascading, inclusive union of multiple Sub-Category members such as Appliances, Art, Binders, and others.</li><li>Updated tooltip content to display Sales, Profit, and a custom calculation with adjusted formatting.</li>
+    </ul>
+  </div>
+</details>
+
+
+<details class="card card-modified" open
+  style="
+    background:#F5F9FF;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:6px solid
+      #FFCA28;
+  "
+>
+  <summary style="
+    padding:12px 14px;
+    font-weight:600;
+    color:#1F6FE5;
+    cursor:pointer;
+  ">
+    🟨 <strong>Modified Worksheet</strong>
+    — ProductView
+    <span class='badge badge-modified'>🟨 Modified</span>
+  </summary>
+
+  <div class="card-body" style="padding:10px 16px;">
+    <ul class="bullets" style="margin:0;">
+      <li>--- GPT Summary ---</li><li>Updated the worksheet tooltip to include formatted order date information with customized font style and color.</li>
+    </ul>
+  </div>
+</details>
+
+
+<details class="card card-removed" open
+  style="
+    background:#F5F9FF;
+    border-radius:12px;
+    margin:12px 0;
+    border-left:6px solid
+      #E57373;
+  "
+>
+  <summary style="
+    padding:12px 14px;
+    font-weight:600;
+    color:#1F6FE5;
+    cursor:pointer;
+  ">
+    🟥 <strong>Removed Calculation</strong>
+    — Cost_Cal
+    <span class='badge badge-removed'>🟥 Removed</span>
+  </summary>
+
+  <div class="card-body" style="padding:10px 16px;">
+    <ul class="bullets" style="margin:0;">
+      <li>Type: Standard</li><li>Formula: [Sales]-[Profit]</li>
+    </ul>
+  </div>
+</details>
+
+  </div>
+</details>
+
+<!-- ===================================================== -->
+<!-- HIERARCHY -->
+<!-- ===================================================== -->
+<div class="panel">
+  <h2>🌳 Tableau Hierarchy Breakdown</h2>
+  <pre style="background:#EDF4FF;padding:14px;border-radius:8px;overflow:auto;">
+🌳 Visual Change Tree
+📦 Workbook — Asc_Demo_Superstore_Dev
+├── 📄 Worksheets
+│    ├── CustomerOverview
+│    │    ├── Filters Shelf (Worksheet)
+│    │    │    └── :Measure Names
+│    │    │    └── none:Order Date:qk
+│    │    │    └── none:Region:nk
+│    │    │    └── none:Segment:nk
+│    │    │    └── qr:Order Date:ok
+│    │    │    └── yr:Order Date:ok
+│    │    ├── Marks Shelf (Worksheet)
+│    │    │    └── ctd:Customer Name:qk
+│    │    │    └── sum:Profit:qk
+│    │    │    └── sum:Quantity:qk
+│    │    │    └── sum:Sales:qk
+│    │    │    └── usr:Calculation_9921103144103743:qk
+│    ├── ProductDetails
+│    │    ├── Filters Shelf (Worksheet)
+│    │    │    └── Action (Category,YEAR(Order Date),MONTH(Order Date))
+│    │    │    └── Action (YEAR(Order Date),MONTH(Order Date),Product Category)
+│    │    │    └── mn:Order Date:ok
+│    │    │    └── none:Order Date:qk
+│    │    │    └── none:Region:nk
+│    │    │    └── none:Sub-Category:nk
+│    │    │    └── yr:Order Date:ok
+│    │    ├── Marks Shelf (Worksheet)
+│    │    │    └── none:Category:nk
+│    │    │    └── none:Product Name:nk
+│    │    │    └── sum:Profit:qk
+│    │    │    └── usr:Calculation_9921103144103743:qk
+│    ├── ProductView
+│    │    ├── Filters Shelf (Worksheet)
+│    │    │    └── none:Category:nk
+│    │    │    └── none:Region:nk
+│    │    │    └── yr:Order Date:ok
+│    │    ├── Marks Shelf (Worksheet)
+│    │    │    └── sum:Profit:qk
+│    │    │    └── sum:Sales:qk
+├── 📊 Dashboards
+│    └── Product
+│         ├── Worksheets
+│         │    └── ProductDetails
+│         │    └── ProductView
+│         ├── Dashboard Filters
+│         │    └── Region
+│         │    └── Sub-Category
+  </pre>
+</div>
+
+<!-- ===================================================== -->
+<!-- DATASOURCES -->
+<!-- ===================================================== -->
+
+        <details class="panel" style="
+            background:#EAF3FF;
+            border-radius:14px;
+            padding:10px 14px;
+            margin:18px 0;
+            box-shadow:0 3px 8px rgba(0,0,0,0.08);
+        ">
+          <summary style="
+              cursor:pointer;
+              font-size:17px;
+              font-weight:600;
+              color:#1f6fe5;
+              list-style:none;
+          ">
+            🗄 Datasource Details — Sample - Superstore
+          </summary>
+
+          <div style="margin-top:12px;">
+            
+            <details class="panel" style="
+                background:#F2F7FF;
+                border-radius:12px;
+                padding:8px 12px;
+                margin:10px 0;
+                box-shadow:0 2px 6px rgba(0,0,0,0.06);
+            ">
+              <summary style="
+                  cursor:pointer;
+                  font-size:15px;
+                  font-weight:600;
+                  color:#1f6fe5;
+                  list-style:none;
+              ">
+                🟨 Sample - Superstore
+              </summary>
+
+              <div style="margin-top:10px;">
+                <ul>
+                  <li>ℹ️ Unknown (Extract | Embedded)</li><li>ℹ️ Existing Filters (unchanged): Ship Mode, Sub-Category</li><li>⚡ Mode: Live → Extract</li>
+                </ul>
+              </div>
+            </details>
+            
+          </div>
+        </details>
+        
+
+        <details class="panel" style="
+            background:#EAF3FF;
+            border-radius:14px;
+            padding:10px 14px;
+            margin:18px 0;
+            box-shadow:0 3px 8px rgba(0,0,0,0.08);
+        ">
+          <summary style="
+              cursor:pointer;
+              font-size:17px;
+              font-weight:600;
+              color:#1f6fe5;
+              list-style:none;
+          ">
+            🗄 Datasource Details — Sales Target
+          </summary>
+
+          <div style="margin-top:12px;">
+            
+            <details class="panel" style="
+                background:#F2F7FF;
+                border-radius:12px;
+                padding:8px 12px;
+                margin:10px 0;
+                box-shadow:0 2px 6px rgba(0,0,0,0.06);
+            ">
+              <summary style="
+                  cursor:pointer;
+                  font-size:15px;
+                  font-weight:600;
+                  color:#1f6fe5;
+                  list-style:none;
+              ">
+                ℹ️ Sales Target
+              </summary>
+
+              <div style="margin-top:10px;">
+                <ul>
+                  <li>ℹ️ Excel Direct (Live | Embedded)</li>
+                </ul>
+              </div>
+            </details>
+            
+          </div>
+        </details>
+        
+
+        <details class="panel" style="
+            background:#EAF3FF;
+            border-radius:14px;
+            padding:10px 14px;
+            margin:18px 0;
+            box-shadow:0 3px 8px rgba(0,0,0,0.08);
+        ">
+          <summary style="
+              cursor:pointer;
+              font-size:17px;
+              font-weight:600;
+              color:#1f6fe5;
+              list-style:none;
+          ">
+            🗄 Datasource Details — Sales Commission
+          </summary>
+
+          <div style="margin-top:12px;">
+            
+            <details class="panel" style="
+                background:#F2F7FF;
+                border-radius:12px;
+                padding:8px 12px;
+                margin:10px 0;
+                box-shadow:0 2px 6px rgba(0,0,0,0.06);
+            ">
+              <summary style="
+                  cursor:pointer;
+                  font-size:15px;
+                  font-weight:600;
+                  color:#1f6fe5;
+                  list-style:none;
+              ">
+                ℹ️ Sales Commission
+              </summary>
+
+              <div style="margin-top:10px;">
+                <ul>
+                  <li>ℹ️ Textscan (Live | Embedded)</li><li>ℹ️ Existing Filters (unchanged): % of quota achieved, Achieved Quota, Achievement (estimated), Base (Variable), Base Salary, Commission (Variable), Commission Rate, Estimate Compensation label, New Quota, OTE (Variable), Rank over 3, Sort by, Sort by field, Total Compensation, Total Sales label</li>
+                </ul>
+              </div>
+            </details>
+            
+          </div>
+        </details>
+        
+
+        <details class="panel" style="
+            background:#EAF3FF;
+            border-radius:14px;
+            padding:10px 14px;
+            margin:18px 0;
+            box-shadow:0 3px 8px rgba(0,0,0,0.08);
+        ">
+          <summary style="
+              cursor:pointer;
+              font-size:17px;
+              font-weight:600;
+              color:#1f6fe5;
+              list-style:none;
+          ">
+            🗄 Datasource Details — Parameters
+          </summary>
+
+          <div style="margin-top:12px;">
+            
+            <details class="panel" style="
+                background:#F2F7FF;
+                border-radius:12px;
+                padding:8px 12px;
+                margin:10px 0;
+                box-shadow:0 2px 6px rgba(0,0,0,0.06);
+            ">
+              <summary style="
+                  cursor:pointer;
+                  font-size:15px;
+                  font-weight:600;
+                  color:#1f6fe5;
+                  list-style:none;
+              ">
+                ℹ️ Parameters
+              </summary>
+
+              <div style="margin-top:10px;">
+                <ul>
+                  <li>ℹ️ Tableau (Live | Embedded)</li><li>ℹ️ Existing Filters (unchanged): Base Salary, Churn Rate, Commission Rate, New Business Growth, New Quota, Sales Forecast Parameter_Zoom, Sort by</li>
+                </ul>
+              </div>
+            </details>
+            
+          </div>
+        </details>
+        
+
+<!-- ===================================================== -->
+<!-- APPROVAL DECISION CARD - HORIZONTAL LAYOUT -->
+<!-- ===================================================== -->
+
+<style>
+
+.approval-container {
+    width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    font-family: Arial, sans-serif;
+}
+
+.approval-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.approval-grid {
+    display: grid;
+    grid-template-columns: 180px 250px 180px 250px;
+    gap: 10px 15px;
+    align-items: center;
+}
+
+.approval-grid label {
+    font-weight: 600;
+}
+
+.approval-grid input,
+.approval-grid textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.approval-grid textarea {
+    grid-column: span 3;
+    height: 60px;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.approve-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.reject-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.status-text {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+</style>
+
+<div class="approval-container">
+
+<h3>Approval Decision</h3>
+
+<!-- Hidden field: IMPORTANT -->
+<input type="hidden"
+id="generated_html_path"
+value="C:\Users\sathyanarayana.p\OneDrive - ascendion\Desktop\AAVA_pullTest\aava_vscode\aava_vscode\compare_SOURCE_vs_TARGET_latest.html">
+
+
+<div class="approval-grid">
+
+<label>Reviewer Name</label>
+<input type="text"
+id="reviewer_name"
+placeholder="Enter reviewer name">
+
+<label>Deployment Time</label>
+<input type="datetime-local"
+id="deployment_time">
+
+<label>Source Project</label>
+<input type="text"
+id="source_project"
+placeholder="Enter source project">
+
+<label>Target Project</label>
+<input type="text"
+id="target_project"
+placeholder="Enter target project">
+
+<label>Workbook Name</label>
+<input type="text"
+id="workbook_name"
+placeholder="Enter workbook name">
+
+<label>Comments</label>
+<textarea
+id="comments"
+placeholder="Enter approval/rejection reason"></textarea>
+
+</div>
+
+<div class="button-group">
+
+<button class="approve-btn"
+onclick="approveDeploy()">
+✔ Approve & Deploy
+</button>
+
+<button class="reject-btn"
+onclick="rejectDeploy()">
+✖ Reject
+</button>
+
+</div>
+
+<p id="approval-status"
+class="status-text"></p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SCRIPT -->
+<!-- ===================================================== -->
+
+<script>
+
+function approveDeploy() {
+
+const statusEl =
+document.getElementById("approval-status");
+
+const reviewer =
+document.getElementById("reviewer_name").value;
+
+const deployment_time =
+document.getElementById("deployment_time").value;
+
+const comments =
+document.getElementById("comments").value;
+
+const source_project =
+document.getElementById("source_project").value;
+
+const target_project =
+document.getElementById("target_project").value;
+
+const workbook_name =
+document.getElementById("workbook_name").value;
+
+const generated_html_path =
+document.getElementById("generated_html_path").value;
+
+if (!reviewer || !comments) {
+
+statusEl.innerText =
+"⚠ Reviewer and comments required";
+
+statusEl.style.color =
+"orange";
+
+return;
+}
+
+statusEl.innerText =
+"⏳ Pushing HTML + approval to GitHub...";
+
+statusEl.style.color =
+"#2980b9";
+
+
+fetch("http://127.0.0.1:5000/approve", {
+
+method: "POST",
+
+headers: {
+"Content-Type": "application/json"
+},
+
+body: JSON.stringify({
+
+reviewer,
+deployment_time,
+comments,
+source_project,
+target_project,
+workbook_name,
+generated_html_path,
+decision: "approved"
+
+})
+
+})
+
+.then(res => res.json())
+
+.then(data => {
+
+if (data.status === "success") {
+
+statusEl.innerText =
+"✔ HTML pushed + Deployment started";
+
+statusEl.style.color =
+"green";
+
+} else {
+
+statusEl.innerText =
+"✖ " + data.message;
+
+statusEl.style.color =
+"red";
+
+}
+
+})
+
+.catch(err => {
+
+statusEl.innerText =
+"✖ Server error";
+
+statusEl.style.color =
+"red";
+
+});
+
+}
+
+
+
+function rejectDeploy() {
+
+const statusEl =
+document.getElementById("approval-status");
+
+const reviewer =
+document.getElementById("reviewer_name").value;
+
+const comments =
+document.getElementById("comments").value;
+
+const generated_html_path =
+document.getElementById("generated_html_path").value;
+
+if (!reviewer || !comments) {
+
+statusEl.innerText =
+"⚠ Reviewer and comments required";
+
+statusEl.style.color =
+"orange";
+
+return;
+}
+
+fetch("http://127.0.0.1:5000/approve", {
+
+method: "POST",
+
+headers: {
+"Content-Type": "application/json"
+},
+
+body: JSON.stringify({
+
+reviewer,
+comments,
+generated_html_path,
+decision: "rejected"
+
+})
+
+})
+
+.then(res => res.json())
+
+.then(data => {
+
+statusEl.innerText =
+"✖ Rejection logged + HTML pushed";
+
+statusEl.style.color =
+"red";
+
+});
+
+}
+
+</script>
+
+
+
+
+</body>
+</html>
